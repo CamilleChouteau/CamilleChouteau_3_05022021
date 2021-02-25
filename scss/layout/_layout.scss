@@ -10,14 +10,37 @@
     }
 }
 
-.restaurants__cards {
-    &__card {
-        border: #dbd6d6 solid;
-        border-radius: 1.88rem;
+.footer {
+    background-color: $color-footer;
+    padding-bottom: 2rem;
+    
 
-        &__hyperlink {
-            &__image {
-                width: 100%;
+    &__logo {
+        margin: 0;
+        font-family: $font-logo;
+        font-size: 1.4rem;
+        font-weight: lighter;
+        color: white;
+        padding: 2rem 0rem 0.4rem 2.5rem
+    }
+
+    &__nav {
+        &__list {
+            list-style-type: none;
+            &__item {
+                padding: 0.2rem;
+                &__hyperlink {
+                    text-decoration: none;
+                    color: white;
+                    display: flex;
+                    &__icon {
+                        padding-right: 0.8rem;
+                        width: 0.8rem;
+                        display: flex;
+                        justify-content: center;
+
+                    }
+                }
             }
         }
     }

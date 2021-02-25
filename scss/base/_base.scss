@@ -1,4 +1,7 @@
 body {
     font-family: $font-base;
     margin: 0rem;
+    &img {
+        max-width: 100%;
+    }
 }

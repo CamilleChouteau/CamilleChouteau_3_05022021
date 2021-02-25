@@ -29,10 +29,15 @@
         </header>
 
         <section class="localisation">
-            <form>
-                <label class="fas fa-map-marker-alt localisation__icon"></label>
+            <form class="localisation__form">
+                <label
+                    class="fas fa-map-marker-alt localisation__form__icon"
+                    aria-hidden="true"
+                    for="localisation"
+                ></label>
                 <input
-                    class="localisation__icon__search"
+                    id="localisation"
+                    class="localisation__form__search"
                     type="search"
                     placeholder="Paris, Belleville"
                 />

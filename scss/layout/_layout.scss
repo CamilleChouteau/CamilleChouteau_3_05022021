@@ -1,24 +1,24 @@
 .header {
-  padding: 1.5rem 0rem 1rem 0rem;
-  
-  &__logo__hyperlink {
-    display: flex;
-    justify-content: center;
-    &__image {
-      width: 60%;
+    padding: 1.5rem 0rem 1rem 0rem;
+
+    &__logo__hyperlink {
+        display: flex;
+        justify-content: center;
+        &__image {
+            width: 60%;
+        }
     }
-  }
 }
 
 .restaurants__cards {
-  &__card {
-    border: #dbd6d6 solid;
-    border-radius: 1.88rem;
+    &__card {
+        border: #dbd6d6 solid;
+        border-radius: 1.88rem;
 
-    &__hyperlink {
-      &__image {
-        width: 100%;
-      }
+        &__hyperlink {
+            &__image {
+                width: 100%;
+            }
+        }
     }
-  }
 }

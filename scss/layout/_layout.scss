@@ -10,10 +10,133 @@
     }
 }
 
+.header-restaurants {
+    padding: 1rem;
+
+    &__hyperlink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+        color: black;
+
+        &__arrow {
+            position: absolute;
+            left: 0;
+            margin-left: 1rem;
+            font-size: 1.3rem;
+        }
+        &__logo {
+            width: 50%;
+        }
+    }
+}
+
+.menu {
+    background-color: $color-light-background;
+    position: relative;
+    margin-top: -4rem;
+    padding-bottom: 4rem;
+    border-radius: 3rem 3rem 0rem 0rem;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        align-items: center;
+        padding: 1rem 2rem 0rem 2rem;
+
+        &__restaurant-name {
+            font-family: $font-logo;
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        &__heart-icon {
+            font-size: 1.8rem;
+            transform: translateY(-0.2rem);
+        }
+    }
+
+    &__category {
+        padding: 0rem 1rem 0rem 1rem;
+
+        &__headers {
+            font-family: $font-base;
+            font-weight: lighter;
+            font-size: 1.3rem;
+            margin: 0rem 0rem 0.3rem 0rem;
+        }
+        &__underline {
+            background-color: $color-new-background;
+            height: 0.3rem;
+            width: 3.4rem;
+        }
+
+        &__card {
+            margin: 1rem 0rem 1rem 0rem;
+
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
+
+            &__content {
+                display: grid;
+                grid-template-columns: 1fr min-content;
+                align-items: end;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+
+                &__text {
+                    &__dish {
+                        margin: 0;
+                    }
+                    &__details {
+                        margin: 0;
+                        font-family: $font-description;
+                        font-weight: bold;
+                    }
+                }
+
+                &__price {
+                    margin: 0;
+                    padding-right: 0.4rem;
+                }
+            }
+
+            &__check {
+                display: none;
+            }
+        }
+    }
+    &__order-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 3.5rem;
+        &__link {
+            background: linear-gradient(
+                to bottom right,
+                $color-secondary,
+                $color-primary
+            );
+            padding: 1rem 3rem 1rem 3rem;
+            border-radius: 1.88rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
+            border: none;
+            
+            &:hover {
+                opacity: 0.85;
+                
+            }
+        }
+    }
+}
+
 .footer {
     background-color: $color-footer;
     padding-bottom: 2rem;
-    
 
     &__logo {
         margin: 0;
@@ -21,7 +144,7 @@
         font-size: 1.4rem;
         font-weight: lighter;
         color: white;
-        padding: 2rem 0rem 0.4rem 2.5rem
+        padding: 2rem 0rem 0.4rem 2.5rem;
     }
 
     &__nav {
@@ -38,7 +161,6 @@
                         width: 0.8rem;
                         display: flex;
                         justify-content: center;
-
                     }
                 }
             }

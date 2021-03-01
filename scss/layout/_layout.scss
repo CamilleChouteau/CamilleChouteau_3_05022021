@@ -79,19 +79,29 @@
             border-radius: 1rem;
             box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
 
+            @include tablet {
+                background-color: blue;
+            }
+
+            @include desktop {
+                background-color: chocolate;
+            }
+
+
             animation: card-appear 0.4s both;
 
 
             /******* BOUCLE ANIMATION CARTE ***********
             Sert à mettre un délai différent à l'apparition de chaque carte 
             (un peu plus grand à chaque fois).
-            La valeur de la variable $i va aller de 1 à 10
+            La valeur de la variable $i va aller de 2 à 10 
+            (on saute la 1ère card car elle n'a pas besoin de délai)
             Le nth-child sert à faire référence à la énième card 
-            (vu que la valeur de $i augmente, à chaque tout de boucle on fait 
+            (vu que la valeur de $i augmente, à chaque tour de boucle on fait 
             référence à une carte un peu plus bas dans la liste et on lui met 
-            un délai d'animatio un peu plus grand).
+            un délai d'animation un peu plus grand).
             *******************************************/
-            @for $i from 1 to 10 {
+            @for $i from 2 to 10 {
                 &:nth-child(#{$i}n) {
                     animation-delay: #{$i * 0.15}s;
                 }

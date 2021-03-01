@@ -1,7 +1,9 @@
 @keyframes card-appear {
     from {
         opacity: 0;
-        transform: translateY(-0.7rem); /* Valeur négative pour que les card arrivent par le haut */
+        transform: translateY(
+            -0.7rem
+        ); /* Valeur négative pour que les card arrivent par le haut */
     }
 
     to {
@@ -9,3 +11,5 @@
         transform: translateY(0rem);
     }
 }
+
+

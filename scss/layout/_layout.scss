@@ -4,8 +4,14 @@
     &__logo__hyperlink {
         display: flex;
         justify-content: center;
+
         &__image {
             width: 60%;
+
+            @include tablet {
+                height: 3.6rem;
+                width: auto;
+            }
         }
     }
 }
@@ -33,6 +39,15 @@
     }
 }
 
+.restaurant-photo {
+    &__image {
+        max-height: 30rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: 0rem 50%;
+    }
+}
+
 .menu {
     background-color: $color-light-background;
     position: relative;
@@ -46,15 +61,34 @@
         align-items: center;
         padding: 1rem 2rem 0rem 2rem;
 
+        @include tablet {
+            padding: 0rem 4rem 0rem 4rem;
+        }
+        @include desktop {
+            padding: 0rem 5rem 0rem 5rem;
+        }
+
         &__restaurant-name {
             font-family: $font-logo;
             font-size: 2rem;
             font-weight: lighter;
+
+            @include tablet {
+                font-size: 2.3rem;
+            }
+
+            @include desktop {
+                font-size: 3rem;
+            }
         }
 
         &__heart-icon {
             font-size: 1.8rem;
             transform: translateY(-0.2rem);
+
+            @include desktop {
+                font-size: 2.2rem;
+            }
         }
     }
 
@@ -66,72 +100,84 @@
             font-weight: lighter;
             font-size: 1.3rem;
             margin: 0rem 0rem 0.3rem 0rem;
+
+            @include desktop {
+                font-size: 1.7rem;
+            }
         }
         &__underline {
             background-color: $color-new-background;
             height: 0.3rem;
             width: 3.4rem;
-        }
-
-        &__card {
-            margin: 1rem 0rem 1rem 0rem;
-            background-color: white;
-            border-radius: 1rem;
-            box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
-
-            @include tablet {
-                background-color: blue;
-            }
 
             @include desktop {
-                background-color: chocolate;
+                width: 4rem;
             }
+        }
 
-
-            animation: card-appear 0.4s both;
-
-
-            /******* BOUCLE ANIMATION CARTE ***********
-            Sert à mettre un délai différent à l'apparition de chaque carte 
-            (un peu plus grand à chaque fois).
-            La valeur de la variable $i va aller de 2 à 10 
-            (on saute la 1ère card car elle n'a pas besoin de délai)
-            Le nth-child sert à faire référence à la énième card 
-            (vu que la valeur de $i augmente, à chaque tour de boucle on fait 
-            référence à une carte un peu plus bas dans la liste et on lui met 
-            un délai d'animation un peu plus grand).
-            *******************************************/
-            @for $i from 2 to 10 {
-                &:nth-child(#{$i}n) {
-                    animation-delay: #{$i * 0.15}s;
-                }
-            }
-
-            &__content {
+        &__cards {
+            @include tablet {
                 display: grid;
-                grid-template-columns: 1fr min-content;
-                align-items: end;
-                padding: 0.5rem 1rem 0.5rem 1rem;
-
-                &__text {
-                    &__dish {
-                        margin: 0;
-                    }
-                    &__details {
-                        margin: 0;
-                        font-family: $font-description;
-                        font-weight: bold;
-                    }
-                }
-
-                &__price {
-                    margin: 0;
-                    padding-right: 0.4rem;
-                }
+                grid-template-columns: 1fr 1fr;
+                column-gap: 2rem;
+                row-gap: 1.3rem;
+                margin: 1.5rem 0rem 1.5rem 0rem;
             }
 
-            &__check {
-                display: none;
+            &__card {
+                margin: 1rem 0rem 1rem 0rem;
+                background-color: white;
+                border-radius: 1rem;
+                box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
+
+                @include tablet {
+                    margin: 0;
+                }
+
+                animation: card-appear 0.4s both;
+
+                /******* BOUCLE ANIMATION CARTE ***********
+                Sert à mettre un délai différent à l'apparition de chaque carte 
+                (un peu plus grand à chaque fois).
+                La valeur de la variable $i va aller de 2 à 10 
+                (on saute la 1ère card car elle n'a pas besoin de délai)
+                Le nth-child sert à faire référence à la énième card 
+                (vu que la valeur de $i augmente, à chaque tour de boucle on fait 
+                référence à une carte un peu plus bas dans la liste et on lui met 
+                un délai d'animation un peu plus grand).
+                *******************************************/
+                @for $i from 2 to 10 {
+                    &:nth-child(#{$i}n) {
+                        animation-delay: #{$i * 0.15}s;
+                    }
+                }
+
+                &__content {
+                    display: grid;
+                    grid-template-columns: 1fr min-content;
+                    align-items: end;
+                    padding: 0.5rem 1rem 0.5rem 1rem;
+
+                    &__text {
+                        &__dish {
+                            margin: 0;
+                        }
+                        &__details {
+                            margin: 0;
+                            font-family: $font-description;
+                            font-weight: bold;
+                        }
+                    }
+
+                    &__price {
+                        margin: 0;
+                        padding-right: 0.4rem;
+                    }
+                }
+
+                &__check {
+                    display: none;
+                }
             }
         }
     }
@@ -150,11 +196,14 @@
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
+            box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem $color-box-shadow;
             border: none;
+            transition: box-shadow 0.5s;
 
             &:hover {
                 opacity: 0.85;
+                box-shadow: 0.2rem 0.2rem 0.6rem 0.3rem
+                    rgba($color-primary, 0.6);
             }
         }
     }

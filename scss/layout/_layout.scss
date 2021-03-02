@@ -36,7 +36,7 @@
         }
         &__logo {
             width: 50%;
-           @include tablet {
+            @include tablet {
                 width: 30%;
             }
         }
@@ -149,7 +149,7 @@
         &__headers {
             font-family: $font-base;
             font-weight: lighter;
-            font-size: 1.3rem;
+            font-size: $font-size-category-menu;
             margin: 0rem 0rem 0.3rem 0rem;
 
             @include desktop {
@@ -157,7 +157,7 @@
             }
         }
         &__underline {
-            background-color: $color-new-background;
+            background-color: $color-tertiary;
             height: 0.3rem;
             width: 3.4rem;
 
@@ -180,7 +180,7 @@
                 background-color: white;
                 border-radius: 1rem;
                 box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
-
+                cursor: pointer;
                 @include tablet {
                     margin: 0;
                 }
@@ -203,6 +203,36 @@
                     }
                 }
 
+                display: grid;
+                grid-template-columns: 1fr min-content;
+                overflow: hidden;
+                justify-content: center;
+                align-content: stretch;
+
+                /******************** ANIMATION CHECK ************************
+                width : pour la largeur du check quand il s'affiche
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                (+ min-width) = permet que le texte ne revienne pas à la ligne auto 
+                et de le couper avec "..."
+
+                
+
+
+
+                
+
+                **************************************************************/
+                &:hover > &__check {
+                    width: 4rem;
+                }
+
+                &:hover &__check__icon {
+                    transform: rotate(360deg);
+                }
+
                 &__content {
                     display: grid;
                     grid-template-columns: 1fr min-content;
@@ -210,28 +240,50 @@
                     padding: 0.5rem 1rem 0.5rem 1rem;
 
                     &__text {
+                        min-width: 0;
                         &__dish {
                             margin: 0;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                         }
                         &__details {
                             margin: 0;
                             font-family: $font-description;
                             font-weight: bold;
+
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                         }
                     }
 
                     &__price {
+                        grid-column: 2;
                         margin: 0;
-                        padding-right: 0.4rem;
                     }
                 }
 
                 &__check {
-                    display: none;
+                    width: 0rem;
+                    display: grid;
+
+                    background-color: $color-tertiary;
+                    transition: all 0.3s ease-in-out;
+
+                    &__icon {
+                        color: white;
+                        font-size: 1.4rem;
+                        justify-self: center;
+                        align-self: center;
+                        transition: all 0.3s;
+                        transform: rotate(90deg);
+                    }
                 }
             }
         }
     }
+
     &__order-container {
         display: flex;
         justify-content: center;
@@ -279,7 +331,7 @@
 
             @include tablet {
                 display: flex;
-                justify-content: space-evenly
+                justify-content: space-evenly;
             }
             &__item {
                 padding: 0.5rem;

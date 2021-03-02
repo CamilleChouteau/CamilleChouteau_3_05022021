@@ -109,15 +109,13 @@
                 padding: 1rem 0rem 1rem 0rem;
                 margin: 0rem 1rem 0rem 1rem;
                 max-width: 22rem;
-                
-                
+
                 &__one {
                     justify-self: end;
                 }
 
                 &__two {
                     justify-self: start;
-
                 }
 
                 &__three {
@@ -220,6 +218,7 @@
                 text-decoration: none;
                 color: black;
                 position: relative;
+                width: 100%;
 
                 &__new {
                     position: absolute;
@@ -227,7 +226,7 @@
                     right: 0px;
                     margin: 1rem 1rem 0rem 0rem;
                     padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-                    background-color: $color-new-background;
+                    background-color: $color-tertiary;
                     color: $color-new;
                     font-weight: bold;
                     border-radius: 0.2rem;
@@ -293,23 +292,22 @@
                         transition: all 0.5s;
 
                         -webkit-text-fill-color: transparent;
-                        -webkit-text-stroke-width: .08rem;
+                        -webkit-text-stroke-width: 0.08rem;
                         background: -webkit-linear-gradient(
                             top right,
                             $color-primary 30%,
                             $color-secondary 70%
                         );
-                        background-repeat : no-repeat;
+                        background-repeat: no-repeat;
                         background-clip: text;
                         -webkit-background-clip: text;
                         background-size: 100% 0;
-                        background-position : 100% 100%; 
+                        background-position: 100% 100%;
                         font-weight: bold;
 
                         &:hover {
                             background-size: 100% 100%;
                             -webkit-text-stroke-color: transparent;
-                            
                         }
                     }
                 }

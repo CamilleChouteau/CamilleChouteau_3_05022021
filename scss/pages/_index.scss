@@ -64,7 +64,7 @@
     padding: 1rem 2rem;
 
     &__title {
-        font-size: 1.5rem;
+        font-size: $font-size-header;
         font-family: $font-headers;
 
         @include desktop {
@@ -75,8 +75,8 @@
     &__list {
         display: grid;
         grid-template-rows: repeat(3, 5rem);
-        row-gap: 1.5rem;
-        padding: 0rem;
+        row-gap: 2rem;
+        padding: 0rem 3rem 0rem 3rem;
 
         @include tablet {
             display: grid;
@@ -86,6 +86,7 @@
 
         @include desktop {
             display: flex;
+            justify-content: space-evenly;
         }
 
         &__item {
@@ -107,8 +108,17 @@
             @include tablet {
                 padding: 1rem 0rem 1rem 0rem;
                 margin: 0rem 1rem 0rem 1rem;
-                max-width: 25rem;
-                justify-self: center;
+                max-width: 22rem;
+                
+                
+                &__one {
+                    justify-self: end;
+                }
+
+                &__two {
+                    justify-self: start;
+
+                }
 
                 &__three {
                     grid-column: 1 / span 2;
@@ -171,7 +181,7 @@
     background-color: $color-light-background;
     padding-bottom: 3rem;
     &__title {
-        font-size: 1.5rem;
+        font-size: $font-size-header;
         font-family: $font-headers;
         padding: 2.5rem 0rem 0rem 2rem;
 
@@ -254,6 +264,53 @@
                         grid-column-start: 2;
                         grid-row: 1 / span 2;
                         font-size: 1.5rem;
+
+                        /******************************* HEART ANIMATION *********************************
+                        font-weight: bold = permet que le background prenne la forme du coeur et 
+                        le remplisse
+                        (mais du coup il couvre le background)
+
+                        -webkit-text-fill-color: transparent = permet de rendre le coeur transparent 
+                        (et donc de voir le background)
+
+                        -webkit-text-stroke-width = permet de mettre une bordure au coeur 
+                        (et de voir à nouveau sa silhouette)
+
+                        background-repeat = régle un bug au niveau du hover
+
+                        -webkit-background-clip: text = permet que le background soit bien contenu 
+                        dans le coeur 
+                        (par défaut il à la forme du bloc)
+                        
+                        background-size = permet de faire que le background fasse 0 de hauteur 
+                        (donc est invisible)
+
+                        background-position = permet que le début du background soit en bas 
+                        (donc l'animation du coeur se remplira par le bas et non par le haut)
+                        
+                        *******************************************************************************/
+
+                        transition: all 0.5s;
+
+                        -webkit-text-fill-color: transparent;
+                        -webkit-text-stroke-width: .08rem;
+                        background: -webkit-linear-gradient(
+                            top right,
+                            $color-primary 30%,
+                            $color-secondary 70%
+                        );
+                        background-repeat : no-repeat;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        background-size: 100% 0;
+                        background-position : 100% 100%; 
+                        font-weight: bold;
+
+                        &:hover {
+                            background-size: 100% 100%;
+                            -webkit-text-stroke-color: transparent;
+                            
+                        }
                     }
                 }
             }

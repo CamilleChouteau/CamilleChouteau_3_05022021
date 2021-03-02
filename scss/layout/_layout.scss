@@ -18,6 +18,7 @@
 
 .header-restaurants {
     padding: 1rem;
+    position: relative;
 
     &__hyperlink {
         display: flex;
@@ -30,12 +31,12 @@
         &__arrow {
             position: absolute;
             left: 0;
-            margin-left: 1rem;
+            margin-left: 3rem;
             font-size: 1.3rem;
         }
         &__logo {
             width: 50%;
-            @include tablet {
+           @include tablet {
                 width: 30%;
             }
         }

@@ -1,0 +1,44 @@
+.footer {
+    background-color: $color-footer;
+    padding-bottom: 2rem;
+
+    &__logo {
+        margin: 0;
+        font-family: $font-logo;
+        font-size: $font-size-logo;
+        font-weight: lighter;
+        color: white;
+        padding: 2rem 0rem 1rem 2.5rem;
+    }
+
+    &__nav {
+        &__list {
+            list-style-type: none;
+
+            @include tablet {
+                display: flex;
+                justify-content: space-evenly;
+            }
+            &__item {
+                padding: 0.5rem;
+
+                @include tablet {
+                    font-size: 1.1rem;
+                }
+
+                &__hyperlink {
+                    text-decoration: none;
+                    color: white;
+                    display: flex;
+
+                    &__icon {
+                        padding-right: 0.8rem;
+                        width: 0.8rem;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

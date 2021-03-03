@@ -1,0 +1,48 @@
+/******* HEADER MAIN PAGE *****/
+
+.header {
+    padding: 1.5rem 0rem 1rem 0rem;
+
+    &__logo__hyperlink {
+        display: flex;
+        justify-content: center;
+
+        &__image {
+            width: 60%;
+
+            @include tablet {
+                height: 3.6rem;
+                width: auto;
+            }
+        }
+    }
+}
+
+/******** HEADER RESTAURANT PAGE ******/
+
+.header-restaurants {
+    padding: 1rem;
+    position: relative;
+
+    &__hyperlink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+        color: black;
+
+        &__arrow {
+            position: absolute;
+            left: 0;
+            margin-left: 3rem;
+            font-size: 1.3rem;
+        }
+        &__logo {
+            width: 50%;
+            @include tablet {
+                width: 30%;
+            }
+        }
+    }
+}

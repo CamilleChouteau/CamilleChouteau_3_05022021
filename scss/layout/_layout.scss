@@ -1,47 +1,3 @@
-.header {
-    padding: 1.5rem 0rem 1rem 0rem;
-
-    &__logo__hyperlink {
-        display: flex;
-        justify-content: center;
-
-        &__image {
-            width: 60%;
-
-            @include tablet {
-                height: 3.6rem;
-                width: auto;
-            }
-        }
-    }
-}
-
-.header-restaurants {
-    padding: 1rem;
-    position: relative;
-
-    &__hyperlink {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        text-decoration: none;
-        color: black;
-
-        &__arrow {
-            position: absolute;
-            left: 0;
-            margin-left: 3rem;
-            font-size: 1.3rem;
-        }
-        &__logo {
-            width: 50%;
-            @include tablet {
-                width: 30%;
-            }
-        }
-    }
-}
 
 .restaurant-photo {
     &__image {
@@ -148,7 +104,7 @@
         @include desktop {
             display:grid;
             grid-template-columns: repeat(3,1fr);
-            
+
             }
 
         &__category {
@@ -317,51 +273,6 @@
                 opacity: 0.85;
                 box-shadow: 0.2rem 0.2rem 0.6rem 0.3rem
                     rgba($color-primary, 0.6);
-            }
-        }
-    }
-}
-
-.footer {
-    background-color: $color-footer;
-    padding-bottom: 2rem;
-
-    &__logo {
-        margin: 0;
-        font-family: $font-logo;
-        font-size: $font-size-logo;
-        font-weight: lighter;
-        color: white;
-        padding: 2rem 0rem 1rem 2.5rem;
-    }
-
-    &__nav {
-        &__list {
-            list-style-type: none;
-
-            @include tablet {
-                display: flex;
-                justify-content: space-evenly;
-            }
-            &__item {
-                padding: 0.5rem;
-
-                @include tablet {
-                    font-size: 1.1rem;
-                }
-
-                &__hyperlink {
-                    text-decoration: none;
-                    color: white;
-                    display: flex;
-
-                    &__icon {
-                        padding-right: 0.8rem;
-                        width: 0.8rem;
-                        display: flex;
-                        justify-content: center;
-                    }
-                }
             }
         }
     }

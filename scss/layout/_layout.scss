@@ -143,51 +143,63 @@
         }
     }
 
-    &__category {
-        padding: 0rem 1rem 0rem 1rem;
+    &__content {
 
-        &__headers {
-            font-family: $font-base;
-            font-weight: lighter;
-            font-size: $font-size-category-menu;
-            margin: 0rem 0rem 0.3rem 0rem;
-
-            @include desktop {
-                font-size: 1.7rem;
-            }
-        }
-        &__underline {
-            background-color: $color-tertiary;
-            height: 0.3rem;
-            width: 3.4rem;
-
-            @include desktop {
-                width: 4rem;
-            }
-        }
-
-        &__cards {
-            @include tablet {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 2rem;
-                row-gap: 1.3rem;
-                margin: 1.5rem 0rem 1.5rem 0rem;
+        @include desktop {
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            
             }
 
-            &__card {
-                margin: 1rem 0rem 1rem 0rem;
-                background-color: white;
-                border-radius: 1rem;
-                box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
-                cursor: pointer;
+        &__category {
+            padding: 0rem 1rem 0rem 1rem;
+
+            &__headers {
+                font-family: $font-base;
+                font-weight: lighter;
+                font-size: $font-size-category-menu;
+                margin: 0rem 0rem 0.3rem 0rem;
+
+                @include desktop {
+                    font-size: 1.7rem;
+                }
+            }
+            &__underline {
+                background-color: $color-tertiary;
+                height: 0.3rem;
+                width: 3.4rem;
+
+                @include desktop {
+                    width: 4rem;
+                }
+            }
+
+            &__cards {
                 @include tablet {
-                    margin: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 2rem;
+                    row-gap: 1.3rem;
+                    margin: 1.5rem 0rem 1.5rem 0rem;
+                }
+                @include desktop {
+                    display:flex;
+                    flex-direction: column;
                 }
 
-                animation: card-appear 0.4s both;
+                &__card {
+                    margin: 1rem 0rem 1rem 0rem;
+                    background-color: white;
+                    border-radius: 1rem;
+                    box-shadow: 0.3rem 0.3rem 0.4rem $color-box-shadow;
+                    cursor: pointer;
+                    @include tablet {
+                        margin: 0;
+                    }
 
-                /******* BOUCLE ANIMATION CARTE ***********
+                    animation: card-appear 0.4s both;
+
+                    /******* BOUCLE ANIMATION CARTE ***********
                 Sert à mettre un délai différent à l'apparition de chaque carte 
                 (un peu plus grand à chaque fois).
                 La valeur de la variable $i va aller de 2 à 10 
@@ -197,19 +209,19 @@
                 référence à une carte un peu plus bas dans la liste et on lui met 
                 un délai d'animation un peu plus grand).
                 *******************************************/
-                @for $i from 2 to 10 {
-                    &:nth-child(#{$i}n) {
-                        animation-delay: #{$i * 0.15}s;
+                    @for $i from 2 to 10 {
+                        &:nth-child(#{$i}n) {
+                            animation-delay: #{$i * 0.15}s;
+                        }
                     }
-                }
 
-                display: grid;
-                grid-template-columns: 1fr min-content;
-                overflow: hidden;
-                justify-content: center;
-                align-content: stretch;
+                    display: grid;
+                    grid-template-columns: 1fr min-content;
+                    overflow: hidden;
+                    justify-content: center;
+                    align-content: stretch;
 
-                /******************** ANIMATION CHECK ************************
+                    /******************** ANIMATION CHECK ************************
                 width : pour la largeur du check quand il s'affiche
 
                 overflow: hidden;
@@ -218,66 +230,64 @@
                 (+ min-width) = permet que le texte ne revienne pas à la ligne auto 
                 et de le couper avec "..."
 
-                
-
-
-
-                
-
                 **************************************************************/
-                &:hover > &__check {
-                    width: 4rem;
-                }
+                    &:hover > &__check {
+                        width: 4rem;
+                    }
 
-                &:hover &__check__icon {
-                    transform: rotate(360deg);
-                }
+                    &:hover &__check__icon {
+                        transform: rotate(360deg);
+                    }
 
-                &__content {
-                    display: grid;
-                    grid-template-columns: 1fr min-content;
-                    align-items: end;
-                    padding: 0.5rem 1rem 0.5rem 1rem;
+                    &__content {
+                        display: grid;
+                        grid-template-columns: 1fr min-content;
+                        align-items: end;
+                        padding: 0.5rem 1rem 0.5rem 1rem;
+                        
 
-                    &__text {
-                        min-width: 0;
-                        &__dish {
-                            margin: 0;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
+                        &__text {
+                            min-width: 0;
+                            &__dish {
+                                
+                                margin: 0;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            &__details {
+                                
+                                margin: 0;
+                                font-family: $font-description;
+                                font-weight: bold;
+
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
                         }
-                        &__details {
-                            margin: 0;
-                            font-family: $font-description;
-                            font-weight: bold;
 
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
+                        &__price {
+                            grid-column: 2;
+                            margin: 0;
                         }
                     }
 
-                    &__price {
-                        grid-column: 2;
-                        margin: 0;
-                    }
-                }
+                    &__check {
+                        width: 0rem;
+                        display: grid;
 
-                &__check {
-                    width: 0rem;
-                    display: grid;
+                        background-color: $color-tertiary;
+                        transition: all 0.3s ease-in-out;
 
-                    background-color: $color-tertiary;
-                    transition: all 0.3s ease-in-out;
-
-                    &__icon {
-                        color: white;
-                        font-size: 1.4rem;
-                        justify-self: center;
-                        align-self: center;
-                        transition: all 0.3s;
-                        transform: rotate(90deg);
+                        &__icon {
+                            color: white;
+                            font-size: 1.4rem;
+                            justify-self: center;
+                            align-self: center;
+                            transition: all 0.3s;
+                            transform: rotate(90deg);
+                        }
                     }
                 }
             }

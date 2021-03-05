@@ -1,3 +1,36 @@
+/********* SPLASH SCREEN *********/
+.splashscreen {
+    background: linear-gradient(
+        to bottom right,
+        $color-secondary,
+        $color-primary
+    );
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    animation: loader-background 1s 2s both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /******** COOKIE *********/
+    &__spinner {
+        color: white;
+        font-size: 4.5rem;
+        
+        &__cookiefull {
+            animation: loader-cookie-disappear 1.3s infinite both linear;
+        }
+
+        &__cookiebit {
+            animation: loader-cookie-bite 1.3s infinite cubic-bezier(0.2, 0.7, 0.5, 1);
+        }
+
+    }
+}
+
 .localisation {
     display: flex;
     justify-content: center;

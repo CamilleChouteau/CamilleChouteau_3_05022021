@@ -19,15 +19,15 @@
     &__spinner {
         color: white;
         font-size: 4.5rem;
-        
+
         &__cookiefull {
             animation: loader-cookie-disappear 1.3s infinite both linear;
         }
 
         &__cookiebit {
-            animation: loader-cookie-bite 1.3s infinite cubic-bezier(0.2, 0.7, 0.5, 1);
+            animation: loader-cookie-bite 1.3s infinite
+                cubic-bezier(0.2, 0.7, 0.5, 1);
         }
-
     }
 }
 

@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Sert à ce que les medias queries soit reconnues et fonctionne en CSS -->
 
         <title>ohmyfood</title>
         <meta
@@ -32,12 +32,13 @@
 
             <div class="localisation">
                 <form class="localisation__form">
+                    <!-- aria hidden = sert à masquer des logiciels d'accessibilité (parce qu'inutile pour eux, ici une) -->
                     <label
                         class="fas fa-map-marker-alt localisation__form__icon"
                         aria-hidden="true"
                         for="localisation"
                     ></label>
-                    <input
+                    <input 
                         id="localisation"
                         class="localisation__form__search"
                         type="search"
@@ -281,11 +282,17 @@
                 </nav>
             </footer>
         </div>
+
         <div class="splashscreen">
             <div class="fa-stack splashscreen__spinner">
-            <i class="fa-stack-1x fas fa-cookie splashscreen__spinner__cookiefull"></i>
-            <i class="fa-stack-1x fas fa-cookie-bite splashscreen__spinner__cookiebit"></i>
+                <i
+                    class="fa-stack-1x fas fa-cookie splashscreen__spinner__cookiefull"
+                ></i>
+                <i
+                    class="fa-stack-1x fas fa-cookie-bite splashscreen__spinner__cookiebit"
+                ></i>
             </div>
         </div>
+        
     </body>
 </html>

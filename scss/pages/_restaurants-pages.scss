@@ -50,11 +50,11 @@
             le remplisse
             (mais du coup il couvre le background)
 
-            -webkit-text-fill-color: transparent = permet de rendre le coeur transparent 
+            -webkit-text-fill-color: transparent = permet de rendre le coeur entièrement transparent 
             (et donc de voir le background)
 
             -webkit-text-stroke-width = permet de mettre une bordure au coeur 
-            (et de voir à nouveau sa silhouette)
+            (et de voir à nouveau sa silhouette) mais qu'on le voit vide 
 
             background-repeat = régle un bug au niveau du hover
 
@@ -67,7 +67,9 @@
 
             background-position = permet que le début du background soit en bas 
             (donc l'animation du coeur se remplira par le bas et non par le haut)
-               
+
+             -webkit-text-stroke-color: transparent; = Permmet de faire que le contour du coeur 
+             disparaisse pour ne voir que le background  
             *******************************************************************************/
 
             transition: all 0.5s;
@@ -172,25 +174,25 @@
 
                     display: grid;
                     grid-template-columns: 1fr min-content;
-                    overflow: hidden;
+                    overflow: hidden; /** pour que la check mark soit cachée**/
                     justify-content: center;
                     align-content: stretch;
 
                     /******************** ANIMATION CHECK ************************
                 width : pour la largeur du check quand il s'affiche
 
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                overflow: hidden; = ce qui dépasse du bloc n'est pas montré
+                text-overflow: ellipsis; = "..."
+                white-space: nowrap; = pour que le texte ne retourne pas à la ligne
                 (+ min-width) = permet que le texte ne revienne pas à la ligne auto 
                 et de le couper avec "..."
 
                 **************************************************************/
-                    &:hover > &__check {
+                    &:hover > &__check { /** > permet de dire qu'on applique le style de la check mark à un enfant **/
                         width: 4rem;
                     }
 
-                    &:hover &__check__icon {
+                    &:hover &__check__icon { /** Pas de chevron parce que ce n'est pas un enfant de card mais un descendant **/
                         transform: rotate(360deg);
                     }
 

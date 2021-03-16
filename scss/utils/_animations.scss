@@ -21,7 +21,7 @@
 
     100% {
         opacity: 0;
-        visibility: hidden;
+        visibility: hidden; /** Pour qu'il ne bloque pas les clics **/
     }
 }
 
